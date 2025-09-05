@@ -5,23 +5,28 @@ import java.util.Scanner;
 public class Ex16 {
     public static void main(String[] args) {
         Ex16 obj = new Ex16();
-        int input = obj.getInput();
-        String evenOrOdd = obj.isEvenOrOdd(input);
+        InputComparator inputComparator = obj.new InputComparator();
+        inputComparator.setInput();
+        inputComparator.setIsEvenOrOdd();
+        String evenOrOdd = inputComparator.isEvenOrOdd;
         System.out.println("Number is " + evenOrOdd);
     }
+    private class InputComparator {
+        private int  input = 0;
+        private String isEvenOrOdd = "undefined";
 
-    private int getInput() {
-        Scanner sc = new Scanner(System.in);
-        int input = sc.nextInt();
-        sc.close();
-        return input;
-    }
+        private void setInput() {
+            Scanner sc = new Scanner(System.in);
+            input = sc.nextInt();
+            sc.close();
+        }
 
-    private String isEvenOrOdd(int number) {
-        if (number % 2 == 0) {
-            return "Even";
-        } else {
-            return "Odd";
+        private void setIsEvenOrOdd() {
+            if (input % 2 == 0) {
+                isEvenOrOdd = "Even";
+            } else {
+                isEvenOrOdd = "Odd";
+            }
         }
     }
 }
