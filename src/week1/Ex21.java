@@ -20,7 +20,7 @@ public class Ex21 {
 
         private UserInput() {
             Scanner sc = new Scanner(System.in);
-            System.out.println("Enter a year: ");
+            System.out.print("Enter a year: ");
             this.input = sc.nextInt();
         }
 
